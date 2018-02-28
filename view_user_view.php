@@ -15,7 +15,7 @@
 		<th>destroy</th>
 	</tr>
 	<?php
-	$_baseUrl = 'http://localhost/';
+	
 	foreach($mang as $row){	
 		?>
 		<tr>
