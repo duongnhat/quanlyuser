@@ -1,15 +1,24 @@
 <?php
 include("thuvien.php");
 $user = new truyCap;
-include("view_create.php");
+$viewName="view_create.php";
+include ("layout.php");
 if(isset($_POST['tao'])&&($_POST['user']!='')&&($_POST['pass']!='')&&($_POST['email']!='')&& kiemTraEmail($_POST['email'])){
 	$name=$_POST['user'];
 	$pass=$_POST['pass'];
+        $repass=$_POST['repass'];
 	$email=$_POST['email'];
-	$sql="INSERT INTO nguoidung(`user`,`password`,`email`) VALUES ('$name','$pass','$email')";
-	$user->conn();
-	$user->query($sql);
-	echo 'Tao Thanh Cong';
+        if($pass==$repass){
+            $sql="INSERT INTO nguoidung(`user`,`password`,`email`) VALUES ('$name','$pass','$email')";
+            $user->conn();
+            $real=$user->query($sql);
+            if($real){
+                echo 'Tao Thanh Cong';
+            } 
+        }else{
+            echo 'pass khong trung khop';
+        }
+
 }else if(isset($_POST['tao'])&&(($_POST['user']=='')||($_POST['pass']=='')||($_POST['email']==''))){echo 'Khong duoc pha';}
 
 function kiemTraEmail($subject)
@@ -24,6 +33,4 @@ function kiemTraEmail($subject)
 			
 		}
 	}
-?>
-<br>
-<a href="<?php echo $_baseUrl ."view_all.php"; ?>">view all</a>
+

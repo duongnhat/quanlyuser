@@ -2,9 +2,8 @@
 include ("thuvien.php");	
 $edit_user = new truyCap;
 
-// Save ncc
 if (isset($_POST['tao'])&&($_POST['user']!='')&&($_POST['email']!='')){
-	$edit=array($_GET['id'],$_POST['user'],$_POST['pass'],$_POST['email'],$_POST['diachi'],$_POST['sdt']);
+	$edit=array($_GET['id'],$_POST['user'],$_POST['pass'],$_POST['email'],$_POST['diachi'],$_POST['sdt'],$_POST['ngaysinh']);
 	
 	$result = $edit_user->save($edit);
 	if($result){
@@ -13,13 +12,10 @@ if (isset($_POST['tao'])&&($_POST['user']!='')&&($_POST['email']!='')){
 	else { echo 'edit khong thanh cong';}
 }else if(isset($_POST['tao'])&&(($_POST['user']=='')||($_POST['email']==''))){echo 'Khong duoc pha';}
 
-// Display edit form
 if (isset($_GET['id'])) {
 	$id=$_GET['id'];
 	$Obj = $edit_user->getOne($id);
-	include ("view_edit_user.php");
+        $viewName="view_edit_user.php";
+        include ("layout.php");
+
 }
-$_baseUrl = 'http://localhost/';
-?>
-<a href="<?php echo $_baseUrl ."view_all.php"; ?>">view all</a>
-<a href="<?php echo $_baseUrl ."create.php"; ?>">new user</a>

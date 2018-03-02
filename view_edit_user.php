@@ -7,6 +7,7 @@
 		<strong>Email </strong><input required type="email" style="width: 500px" name="email" value="<?php echo $Obj['email']; ?>"/><br>
 		<strong>Dia Chi </strong><input required type="text" style="width: 500px" name="diachi" value="<?php echo $Obj['diachi']; ?>"/><br>
 		<strong>sdt </strong><input required type="number" style="width: 500px" name="sdt" value="<?php echo $Obj['sdt']; ?>"/><br>
+                <strong>Ngay Sinh </strong><input required type="date" style="width: 500px" name="ngaysinh" value="<?php echo $Obj['ngaysinh']; ?>"/><br>
 		<strong>Avata</strong><input type="file" name="myFile"><br>
 		<input type="submit" name="tao" value="edit"/><br>
 		

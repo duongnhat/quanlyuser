@@ -2,7 +2,7 @@
 class truyCap extends database{
 
 	public function selectUser($sql='SELECT * FROM nguoidung')
-	{
+	{       
 		$this->conn();
 		$this->query($sql);
 		$mang=array();
@@ -17,7 +17,7 @@ class truyCap extends database{
 			$edit[$i]=$this->baoMat($edit[$i]);
 		}
 		$this->conn();
-		$sql="UPDATE nguoidung SET nguoidung.id='".$edit['0']."',nguoidung.user='".$edit['1']."',nguoidung.password='".$edit['2']."',nguoidung.email='".$edit['3']."',nguoidung.diachi='".$edit['4']."',nguoidung.sdt='".$edit['5']."' WHERE nguoidung.id='".$edit['0']."'";
+		$sql="UPDATE nguoidung SET nguoidung.id='".$edit['0']."',nguoidung.user='".$edit['1']."',nguoidung.password='".$edit['2']."',nguoidung.email='".$edit['3']."',nguoidung.diachi='".$edit['4']."',nguoidung.sdt='".$edit['5']."',nguoidung.ngaysinh='".$edit['6']."' WHERE nguoidung.id='".$edit['0']."'";
 		return $this->query($sql);
 	}
 	public function getOne($id)

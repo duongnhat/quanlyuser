@@ -2,3 +2,4 @@
 $_baseUrl = 'http://localhost/quanlyuser/';
 include("user.php");
 include("truycap.php");
+include("phantrang.php");
