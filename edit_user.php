@@ -1,7 +1,7 @@
 <?php
 include ("thuvien.php");	
 $edit_user = new truyCap;
-
+$title='Edit user';
 if (isset($_POST['tao'])&&($_POST['user']!='')&&($_POST['email']!='')){
 	$edit=array($_GET['id'],$_POST['user'],$_POST['pass'],$_POST['email'],$_POST['diachi'],$_POST['sdt'],$_POST['ngaysinh']);
 	

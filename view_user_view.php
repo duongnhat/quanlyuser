@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>view user</title>
-</head>
-<body>
 <table border="1px" cellspacing="0px" width="100%">
 	<tr>
 		<th><?php echo $linkid;?></th>
-		<th>user</th>
-		<th>email</th>
-		<th>dia chi</th>
-		<th>sdt</th>
-                <th>ngay sinh</th>
+		<th><?php echo $linkuser;?></th>
+		<th><?php echo $linkemail;?></th>
+		<th><?php echo $linkdiachi;?></th>
+		<th><?php echo $linksdt;?></th>
+                <th><?php echo $linkngaysinh;?></th>
 		<th>profile</th>
 		<th>destroy</th>
 	</tr>
@@ -39,9 +33,7 @@
 
 	?>
 	<form method="GET" action="view_all.php" >
-		<strong>seach </strong><input type="text" style="width: 400px" name="tim" value="<?php if(isset($_GET['tim'])){echo $_GET['tim'];}?>">
-		<input type="submit" name="kiem" value="kiem">
+		<input required type="text" placeholder="Nhap ky tu" style="width: 400px" name="tim" value="<?php if(isset($_GET['tim'])){echo $_GET['tim'];}?>">
+                <button type="submit" name="kiem" class="btn btn-outline-secondary">Seach</button>
 	</form><hr>
 </table>
-</body>
-</html>

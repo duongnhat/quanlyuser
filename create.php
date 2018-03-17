@@ -1,6 +1,7 @@
 <?php
 include("thuvien.php");
 $user = new truyCap;
+$title='Tao moi user';
 $viewName="view_create.php";
 include ("layout.php");
 if(isset($_POST['tao'])&&($_POST['user']!='')&&($_POST['pass']!='')&&($_POST['email']!='')&& kiemTraEmail($_POST['email'])){
